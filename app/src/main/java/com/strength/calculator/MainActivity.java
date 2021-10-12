@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
+//import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -219,6 +220,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addNumber(View view) {
+        if(!txt_result.getText().toString().isEmpty()){
+            txt_workings.setText("");
+            txt_result.setText("");
+            operators = "";
+            workings = "";
+            result = null;
+        }
         switch (view.getId()) {
             case R.id.btn_zero:
                 workings += "0";
